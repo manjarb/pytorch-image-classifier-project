@@ -8,7 +8,7 @@ from torchvision import datasets, transforms, models
 import time
 from workspace_utils import active_session
 
-def load_data(data_dir):
+def load_data(data_dir, is_gpu):
     train_dir = data_dir + '/train'
     valid_dir = data_dir + '/valid'
     test_dir = data_dir + '/test'
@@ -18,7 +18,7 @@ def load_data(data_dir):
     # devices = ['cpu', 'cuda']
     # current_device = devices[0]
     # or use CUDA if available
-    current_device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+    current_device = torch.device("cuda:0" if torch.cuda.is_available() and is_gpu else "cpu")
     current_device
     
     image_size = 224

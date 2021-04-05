@@ -26,7 +26,7 @@ data_dir = args.data_dir
 print(data_dir)
 
 # Get datasets
-train_datasets, valid_datasets, test_datasets, train_loaders, valid_loaders, test_loaders = utility.load_data(data_dir)
+train_datasets, valid_datasets, test_datasets, train_loaders, valid_loaders, test_loaders = utility.load_data(data_dir, args.gpu)
 
 # Create model
 model = utility.get_pretrained_model(args.arch)
